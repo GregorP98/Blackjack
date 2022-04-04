@@ -82,7 +82,7 @@ var bj = {
     if (bj.turn) {
       if (bj.dealer.length==0) {
         cardh.id = "deal-first";
-        cardh.innerHTML = `<div class="back">?</div><div class="front">${cardv}</div>`;
+        cardh.innerHTML = `<div class="back">?</div>`;
       }
       bj.dealer.push(card);
       bj.hdhand.appendChild(cardh);
