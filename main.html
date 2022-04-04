@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="blackjackstyle.css">
+  <meta charset="utf-8">
+  <title>Simple JavaScript Blackjack</title>
+</head>
+
+<body>
+  <h1> JavaScript Blackjack</h1>
+  <div id="deal-data">
+    <!-- if the dealer stands it will show "STAND" -->
+    <span id="deal-stand">STAND</span>
+    Dealer's Hand - <span id="deal-scores">?</span>
+  </div>
+  <div id="deal-cards"></div>
+  <div id="play-data">
+    <!-- likewise, if the player stands it will show "STAND" -->
+    <span id="play-stand">STAND</span>
+    Your Hand - <span id="play-scores">0</span>
+  </div>
+  <div id="play-cards"></div>
+  <div id="play-control">
+    <input type="button" id="playc-start" value="Start!" />
+    <input type="button" id="playc-hit" value="Hit" />
+    <input type="button" id="playc-stand" value="Stand" />
+  </div>
+</body>
+<script src="blackjack.js"></script>
+
+</html>
