@@ -75,7 +75,7 @@ var vb = {
     var card = vb.deck.pop(),
         cardh = document.createElement("div"),
         cardv = (vb.dnum[card.n] ? vb.dnum[card.n] : card.n) + vb.dsymbols[card.s];
-    cardh.className = "bj-card";
+    cardh.className = "vb-card";
     cardh.innerHTML = cardv ;
 
     //dealer's first card ahouls be hidden
