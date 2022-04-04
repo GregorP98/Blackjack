@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #088A08;
+  color: white;
+  text-align: center;
+}
+
+#deal-data, #play-data, #deal-cards, #play-cards, #play-control { padding: 18px; }
+#deal-data, #play-data { font-weight: 700; }
+#deal-cards, #play-cards { min-height: 120px; }
+#deal-data { background: #000000; }
+#deal-cards { background: #252525; }
+#play-data { background: #800000; }
+#play-cards { background: #A40404; }
+#play-control { background: #ffffff; }
+#deal-stand, #play-stand {
+  display: none; padding: 5px;
+  color: #fff; background: #088A08;
+}
+#deal-stand.stood, #play-stand.stood { display: inline-block; }
+
+#deal-cards, #play-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bj-card {
+  display: flex;
+  align-items: center; justify-content: center;
+  margin: 10px;
+  width: 100px; height: 100px;
+  font-size: 2em;
+  text-align: center;
+  background: #000000;
+}
+
+#play-control input {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 20px 20px;
+  border: 0;
+  color: #ffffff;
+  background: #088A08;
+}
+/* tried to figure out how to seperate card colours for their different suits but couldnt get it to work before the deadline*/
