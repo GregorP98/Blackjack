@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="./styles/blackjackstyle.css">
-  <meta charset="utf-8">
-  <title>Simple JavaScript Blackjack</title>
-</head>
+  <head>
+   <link rel="stylesheet" type="text/css" href="./styles/blackjackstyle.css">
+   <meta charset="utf-8">
+   <title>Simple JavaScript Blackjack</title>
+  </head>
 
-<body>
-  <h1> JavaScript Blackjack</h1>
-  <div id="deal-data">
-    <!-- if the dealer stands it will show "STAND" -->
-    <span id="deal-stand">STAND</span>
-    Dealer's Hand - <span id="deal-scores">?</span>
-  </div>
-  <div id="deal-cards"></div>
-  <div id="play-data">
-    <!-- likewise, if the player stands it will show "STAND" -->
-    <span id="play-stand">STAND</span>
-    Your Hand - <span id="play-scores">0</span>
-  </div>
-  <div id="play-cards"></div>
-  <div id="play-control">
-    <input type="button" id="playc-start" value="Start!" />
-    <input type="button" id="playc-hit" value="Hit" />
-    <input type="button" id="playc-stand" value="Stand" />
-  </div>
-</body>
-<script src="./scripts/blackjack.js"></script>
+  <body>
+    <h1> JavaScript Blackjack</h1>
+    <div id="deal-data">
+     <!-- if the dealer stands it will show "STAND" -->
+     <span id="deal-stand">STAND</span>
+     Dealer's Hand - <span id="deal-scores">?</span>
+   </div>
+   <div id="deal-cards"></div>
+    <div id="play-data">
+     <!-- likewise, if the player stands it will show "STAND" -->
+     <span id="play-stand">STAND</span>
+     Your Hand - <span id="play-scores">0</span>
+    </div>
+    <div id="play-cards"></div>
+    <div id="play-control">
+     <input type="button" id="playc-start" value="Start!" />
+     <input type="button" id="playc-hit" value="Hit" />
+     <input type="button" id="playc-stand" value="Stand" />
+    </div>
+  </body>
+  <script src="./scripts/blackjack.js"></script>
 </html>
+
 <!--Having had absolutely no experience in CSS or html I took a little time to get going and struggled at the start but found that the relevant css and html aspects were quite straightforward. Some others' code on codepen.io gave me a good idea of how to create the logic for Aces etc as well as stackexchange codereviews to see mistakes others may have made and corrected doing similar projects. I used https://medium.com/@nitinpatel_20236/how-to-shuffle-correctly-shuffle-an-array-in-javascript-15ea3f84bfb for my method to shuffle the card deck. My understanding of some of the components can still be improved so i have been revisiting the links sent in the assignment email.
 The first examples i looked at for help were object oriented programming so that is what i went for, although i am now aware that i could have done it more easily with Simple JavaScript, an example of this being https://embed.plnkr.co/plunk/qjVrV3 . 
 I wasn't sure how to set up a devspace on my pc so I used github for my code.
