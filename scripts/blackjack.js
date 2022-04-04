@@ -229,7 +229,7 @@ var vb = {
   },
   // computer stands on 17+
   ai : () => { if (vb.turn) {
-    if (bj.dscores >= vb.safety) { vb.stand(); }
+    if (vb.dscores >= vb.safety) { vb.stand(); }
     else { vb.hit(); }
   }}
 };
