@@ -173,7 +173,7 @@ var vb = {
     if (winner != null) {
       // show all cards
       vb.hdscores.innerHTML = vb.dscores;
-      document.getElementById("deal-first").classList.add("show");
+      document.getElementById("dealer-first").classList.add("show");
 
       // resetting
       vb.hpcon.classList.remove("started");
@@ -212,7 +212,6 @@ var vb = {
     if (winner==null) { vb.next(); }
   },
 
-  // (I) WHO'S NEXT?
   next : () => {
     vb.turn = vb.turn==0 ? 1 : 0 ;
 
