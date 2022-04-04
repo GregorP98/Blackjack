@@ -49,7 +49,7 @@ var vb = {
 
     // Shuffle deck
     for (let i=0; i<4; i++) { for (let j=1; j<14; j++) {
-      bj.deck.push({s : i, n : j});
+      vb.deck.push({s : i, n : j});
     }}
     for (let i=vb.deck.length - 1; i>0; i--) {
       let j = Math.floor(Math.random() * i);
@@ -120,7 +120,7 @@ var vb = {
     if (vb.turn) { vb.dscores = scores; }
     else {
       vb.pscores = scores;
-      bvbhpscores.innerHTML = scores;
+      vb.hpscores.innerHTML = scores;
     }
   },
 
