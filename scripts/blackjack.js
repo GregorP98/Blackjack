@@ -10,7 +10,6 @@ var vb = {
   hpscores : null, 
   hphand : null, 
   hpcon : null,
-
   deck : [],      // current deck of cards
   dealer : [],    // dealer's hand
   player : [],    // player's hand
@@ -23,19 +22,18 @@ var vb = {
 //Starting the game.
   init : () => {
  // Elements from the html 
-    vb.hdstand = document.getElementById("dealer-stand");
-    vb.hdscores = document.getElementById("dealer-scores");
-    vb.hdhand = document.getElementById("dealer-cards");
-    vb.hpstand = document.getElementById("player-stand");
-    vb.hpscores = document.getElementById("player-scores");
-    vb.hphand = document.getElementById("player-cards");
-    vb.hpcon = document.getElementById("player-control");
+    vb.hdstand = document.getElementById("deal-stand");
+    vb.hdscores = document.getElementById("deal-scores");
+    vb.hdhand = document.getElementById("deal-cards");
+    vb.hpstand = document.getElementById("play-stand");
+    vb.hpscores = document.getElementById("play-scores");
+    vb.hphand = document.getElementById("play-cards");
+    vb.hpcon = document.getElementById("play-control");
   //what happens when buttons are clicked?
-    document.getElementById("playerc-start").onclick = vb.start;
-    document.getElementById("playerc-hit").onclick = vb.hit;
-    document.getElementById("playerc-stand").onclick = vb.stand;
+    document.getElementById("playc-start").onclick = vb.start;
+    document.getElementById("playc-hit").onclick = vb.hit;
+    document.getElementById("playc-stand").onclick = vb.stand;
   },
-
   // restarting
   start : () => {
     vb.deck = [];  vb.dealer = [];  vb.player = [];
@@ -46,7 +44,6 @@ var vb = {
     vb.hdstand.classList.remove("stood");
     vb.hpstand.classList.remove("stood");
     vb.hpcon.classList.add("started");
-
     // Shuffle deck
     for (let i=0; i<4; i++) { for (let j=1; j<14; j++) {
       vb.deck.push({s : i, n : j});
@@ -57,7 +54,6 @@ var vb = {
       vb.deck[i] = vb.deck[j];
       vb.deck[j] = temp;
     }
-
     // draw 2 cards for each player
     vb.turn = 0; vb.draw(); vb.turn = 1; vb.draw();
     vb.turn = 0; vb.draw(); vb.turn = 1; vb.draw();
@@ -92,7 +88,6 @@ var vb = {
       vb.hphand.appendChild(cardh);
     }
   },
-
   // calculating scores
   scores : () => {
     // Number cards take numerical value, royals are 10 and ace is calculated later as 1 or 11.
@@ -102,7 +97,6 @@ var vb = {
       else if (i.n>=11 && i.n<=13) { scores += 10; }
       else { scores += i.n; }
     }
-
     // Ace logic
     if (aces!=0) {
       var minmax = [];
@@ -115,7 +109,6 @@ var vb = {
         if (i > scores && i <= 21) { scores = i; }
       }
     }
-
     // new scores
     if (vb.turn) { vb.dscores = scores; }
     else {
@@ -123,11 +116,9 @@ var vb = {
       vb.hpscores.innerHTML = scores;
     }
   },
-
   // Checking for winners
   check : () => {
     var winner = null, message = "";
-
    // when 21 upon intial card deal
     if (vb.player.length==2 && vb.dealer.length==2) {
       // both players have 21
@@ -143,7 +134,6 @@ var vb = {
         winner = 1; message = "Dealer wins with a Blackjack!";
       }
     }
-
     // Going bust
     if (winner == null) {
       if (vb.pscores>21) {
@@ -153,7 +143,6 @@ var vb = {
         winner = 0; message = "Dealer has gone bust - Player wins!";
       }
     }
-
     // case when both players stand
     if (winner == null && vb.dstand && vb.pstand) {
       // dealer has higher score below 21
@@ -169,23 +158,19 @@ var vb = {
         winner = 2; message = "It's a tie.";
       }
     }
-
     if (winner != null) {
       // show all cards
       vb.hdscores.innerHTML = vb.dscores;
-      document.getElementById("dealer-first").classList.add("show");
-
+      document.getElementById("deal-first").classList.add("show");
       // resetting
       vb.hpcon.classList.remove("started");
       alert(message);
     }
     return winner;
   },
-
   // when hitting
   hit : () => {
     vb.draw(); vb.scores();
-
      // if 21 is reached the player or dealer stand
     if (vb.turn==0 && vb.pscores==21 && !vb.pstand) {
       vb.pstand = true; vb.hpstand.classList.add("stood");
@@ -193,12 +178,10 @@ var vb = {
     if (vb.turn==1 && vb.dscores==21 && !vb.dstand) {
       vb.dstand = true; vb.hdstand.classList.add("stood");
     }
-
     // no winner at the end of the round
     var winner = vb.check();
     if (winner==null) { vb.next(); }
   },
-
   // Standing
   stand : () => {
     if (vb.turn) {
@@ -206,21 +189,18 @@ var vb = {
     } else {
       vb.pstand = true; vb.hpstand.classList.add("stood");
     }
-
     // when to end game
     var winner = (vb.pstand && vb.dstand) ? vb.check() : null ;
     if (winner==null) { vb.next(); }
   },
-
+  // (I) WHO'S NEXT?
   next : () => {
     vb.turn = vb.turn==0 ? 1 : 0 ;
-
     // dealer's turn
     if (vb.turn==1) {
       if (vb.dstand) { vb.turn = 0; } 
       else { vb.ai(); }
     }
-
     // player's turn
     else {
       if (vb.pstand) { vb.turn = 1; vb.ai(); } 
