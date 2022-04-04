@@ -23,17 +23,17 @@ var vb = {
 //Starting the game.
   init : () => {
  // Elements from the html 
-    vb.hdstand = document.getElementById("deal-stand");
-    vb.hdscores = document.getElementById("deal-scores");
-    vb.hdhand = document.getElementById("deal-cards");
-    vb.hpstand = document.getElementById("play-stand");
-    vb.hpscores = document.getElementById("play-scores");
-    vb.hphand = document.getElementById("play-cards");
-    vb.hpcon = document.getElementById("play-control");
+    vb.hdstand = document.getElementById("dealer-stand");
+    vb.hdscores = document.getElementById("dealer-scores");
+    vb.hdhand = document.getElementById("dealer-cards");
+    vb.hpstand = document.getElementById("player-stand");
+    vb.hpscores = document.getElementById("player-scores");
+    vb.hphand = document.getElementById("player-cards");
+    vb.hpcon = document.getElementById("player-control");
   //what happens when buttons are clicked?
-    document.getElementById("playc-start").onclick = vb.start;
-    document.getElementById("playc-hit").onclick = vb.hit;
-    document.getElementById("playc-stand").onclick = vb.stand;
+    document.getElementById("playerc-start").onclick = vb.start;
+    document.getElementById("playerc-hit").onclick = vb.hit;
+    document.getElementById("playerc-stand").onclick = vb.stand;
   },
 
   // restarting
