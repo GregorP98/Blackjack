@@ -93,7 +93,7 @@ var vb = {
     cardh.className = "vb-card";
     cardh.innerHTML = cardv ;
 
-    //dealer's first card ahouls be hidden
+    //dealer's first card should be hidden
     
     if (vb.turn) {
       if (vb.dealer.length==0) {
@@ -201,7 +201,7 @@ var vb = {
       }
     }
     if (winner != null) {
-      
+      var hidden = "display: none";
       // show all cards
       
       vb.hdscores.innerHTML = vb.dscores;
