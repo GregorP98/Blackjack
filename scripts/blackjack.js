@@ -31,17 +31,17 @@ var vb = {
     
     vb.hdstand = $("#deal-stand")[0];
     vb.hdscores = $("#deal-scores")[0];
-    vb.hdhand = document.getElementById("deal-cards");
-    vb.hpstand = document.getElementById("play-stand");
-    vb.hpscores = document.getElementById("play-scores");
-    vb.hphand = document.getElementById("play-cards");
-    vb.hpcon = document.getElementById("play-control");
+    vb.hdhand = $("deal-cards")[0];
+    vb.hpstand = $("play-stand")[0];
+    vb.hpscores = $("play-scores")[0];
+    vb.hphand = $("play-cards")[0];
+    vb.hpcon = $("play-control")[0];
     
   //what happens when buttons are clicked?
     
-    document.getElementById("playc-start").onclick = vb.start;
-    document.getElementById("playc-hit").onclick = vb.hit;
-    document.getElementById("playc-stand").onclick = vb.stand;
+    $("playc-start").onclick = vb.start;
+    $("playc-hit").onclick = vb.hit;
+    $("playc-stand").onclick = vb.stand;
   },
   
   // restarting
