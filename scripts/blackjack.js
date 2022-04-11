@@ -201,7 +201,6 @@ var vb = {
       }
     }
     if (winner != null) {
-      var hidden = "display: none";
       // show all cards
       
       vb.hdscores.innerHTML = vb.dscores;
