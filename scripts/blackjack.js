@@ -55,6 +55,7 @@ var vb = {
     vb.hdstand.classList.remove("stood");
     vb.hpstand.classList.remove("stood");
     vb.hpcon.classList.add("started");
+    vb.start.classlist.add("hidden);
     
     // Shuffle deck
     
@@ -79,6 +80,8 @@ var vb = {
     if (winner==null) { vb.turn = 0; }
   },
   
+  vb.buttonBox.classList.remove("hidden");
+
   // draw next card if hit
   
   dsymbols : ["&hearts;", "&diams;", "&clubs;", "&spades;"], // HTML symbols for cards
@@ -204,7 +207,7 @@ var vb = {
       // show all cards
       
       vb.hdscores.innerHTML = vb.dscores;
-      document.getElementById("deal-first").classList.add("show");
+      $("deal-first").classList.add("show");
       
       // resetting
       
