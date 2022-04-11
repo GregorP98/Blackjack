@@ -207,7 +207,7 @@ var vb = {
       // show all cards
       
       vb.hdscores.innerHTML = vb.dscores;
-      $("deal-first").classList.add("show");
+      document.getElementById("deal-first").classList.add("show");
       
       // resetting
       
