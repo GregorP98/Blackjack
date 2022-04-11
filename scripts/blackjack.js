@@ -29,8 +29,8 @@ var vb = {
     
  // Elements from the html 
     
-    vb.hdstand = document.getElementById("deal-stand");
-    vb.hdscores = document.getElementById("deal-scores");
+    vb.hdstand = $("#deal-stand")[0];
+    vb.hdscores = $("#deal-scores")[0];
     vb.hdhand = document.getElementById("deal-cards");
     vb.hpstand = document.getElementById("play-stand");
     vb.hpscores = document.getElementById("play-scores");
