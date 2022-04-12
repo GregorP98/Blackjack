@@ -55,7 +55,6 @@ var vb = {
     vb.hdstand.classList.remove("stood");
     vb.hpstand.classList.remove("stood");
     vb.hpcon.classList.add("started");
-    vb.start.classlist.add("hidden);
     
     // Shuffle deck
     
@@ -79,8 +78,6 @@ var vb = {
     var winner = vb.check();
     if (winner==null) { vb.turn = 0; }
   },
-  
-  vb.buttonBox.classList.remove("hidden");
 
   // draw next card if hit
   
