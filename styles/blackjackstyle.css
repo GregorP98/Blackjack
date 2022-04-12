@@ -17,6 +17,7 @@ body {
   color: #fff; background: #088A08;
 }
 #deal-stand.stood, #play-stand.stood { display: inline-block; }
+
 #deal-cards, #play-cards {
   display: flex;
   flex-wrap: wrap;
@@ -30,6 +31,10 @@ body {
   text-align: center;
   background: #000000;
 }
+#deal-first .front { display: none; }
+#deal-first.show .back { display: none; }
+#deal-first.show .front { display: block; }
+
 #play-control input {
   cursor: pointer;
   font-weight: 700;
