@@ -29,19 +29,19 @@ var vb = {
     
  // Elements from the html 
     
-    vb.hdstand = document.getElementById("deal-stand");
-    vb.hdscores = document.getElementById("deal-scores");
-    vb.hdhand = document.getElementById("deal-cards");
-    vb.hpstand = document.getElementById("play-stand");
-    vb.hpscores = document.getElementById("play-scores");
-    vb.hphand = document.getElementById("play-cards");
-    vb.hpcon = document.getElementById("play-control");
+    vb.hdstand = $("#deal-stand")[0];
+    vb.hdscores = $("#deal-scores")[0];
+    vb.hdhand = $("#deal-cards")[0];
+    vb.hpstand = $("#play-stand")[0];
+    vb.hpscores = $("#play-scores")[0];
+    vb.hphand = $("#play-cards")[0];
+    vb.hpcon = $("#play-control")[0];
     
   //what happens when buttons are clicked?
     
-    document.getElementById("playc-start").onclick = vb.start;
-    document.getElementById("playc-hit").onclick = vb.hit;
-    document.getElementById("playc-stand").onclick = vb.stand;
+    $("#playc-start").onclick = vb.start;
+    $("#playc-hit").onclick = vb.hit;
+    $("#playc-stand").onclick = vb.stand;
   },
   
   // restarting
@@ -93,12 +93,12 @@ var vb = {
     cardh.className = "vb-card";
     cardh.innerHTML = cardv ;
 
-    //dealer's first card ahouls be hidden
+    //dealer's first card should be hidden
     
     if (vb.turn) {
       if (vb.dealer.length==0) {
         cardh.id = "deal-first";
-        cardh.innerHTML = `<div class="back">?</div>`;
+        cardh.innerHTML = `<div class="back">?</div><div class="front">${cardv}</div>`;
       }
       vb.dealer.push(card);
       vb.hdhand.appendChild(cardh);
