@@ -33,9 +33,12 @@ body {
 #play-control input {
   cursor: pointer;
   font-weight: 700;
-  padding: 20px 20px;
+  padding: 10px 20px;
   border: 0;
-  color: #ffffff;
-  background: #088A08;
+  color: #fff;
+  background: #4381de;
 }
+#playc-hit, #playc-stand { display: none; }
+#play-control.started #playc-start { display: none; }
+#play-control.started #playc-hit, #play-control.started #playc-stand { display: inline-block; }
 /* tried to figure out how to seperate card colours for their different suits but couldnt get it to work before the deadline*/
