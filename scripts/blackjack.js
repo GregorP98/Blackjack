@@ -1,7 +1,6 @@
 //blackjack.js
 //the sum of the card values is referenced as "scores" throughout the code.
 // var = vb, vb=vanilla blackjack
-
 var vb = {
   
 //HTML references. hd = dealer, hp = player
@@ -28,7 +27,7 @@ var vb = {
   init : () => {
     
  // Elements from the html 
-    
+
     vb.hdstand = $("#deal-stand")[0];
     vb.hdscores = $("#deal-scores")[0];
     vb.hdhand = $("deal-cards")[0];
@@ -36,14 +35,14 @@ var vb = {
     vb.hpscores = $("play-scores")[0];
     vb.hphand = $("play-cards")[0];
     vb.hpcon = $("play-control")[0];
-    
+
   //what happens when buttons are clicked?
-    
+
     $("playc-start").onclick = vb.start;
     $("playc-hit").onclick = vb.hit;
     $("playc-stand").onclick = vb.stand;
   },
-  
+
   // restarting
   
   start : () => {
@@ -78,7 +77,7 @@ var vb = {
     var winner = vb.check();
     if (winner==null) { vb.turn = 0; }
   },
-
+  
   // draw next card if hit
   
   dsymbols : ["&hearts;", "&diams;", "&clubs;", "&spades;"], // HTML symbols for cards
@@ -92,7 +91,6 @@ var vb = {
         cardv = (vb.dnum[card.n] ? vb.dnum[card.n] : card.n) + vb.dsymbols[card.s];
     cardh.className = "vb-card";
     cardh.innerHTML = cardv ;
-
     //dealer's first card should be hidden
     
     if (vb.turn) {
@@ -246,7 +244,6 @@ var vb = {
     var winner = (vb.pstand && vb.dstand) ? vb.check() : null ;
     if (winner==null) { vb.next(); }
   },
-
   next : () => {
     vb.turn = vb.turn==0 ? 1 : 0 ;
     // dealer's turn
