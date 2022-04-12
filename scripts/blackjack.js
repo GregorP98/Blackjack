@@ -25,7 +25,7 @@ var vb = {
 //Starting the game.
   
   init : () => {
-    
+
  // Elements from the html 
 
     vb.hdstand = $("#deal-stand")[0];
@@ -35,14 +35,14 @@ var vb = {
     vb.hpscores = $("play-scores")[0];
     vb.hphand = $("play-cards")[0];
     vb.hpcon = $("play-control")[0];
-
+    
   //what happens when buttons are clicked?
-
+    
     $("playc-start").onclick = vb.start;
     $("playc-hit").onclick = vb.hit;
     $("playc-stand").onclick = vb.stand;
   },
-
+  
   // restarting
   
   start : () => {
